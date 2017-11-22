@@ -1,14 +1,19 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const SRC = path.resolve(__dirname, 'app');
-const DEST = path.resolve(__dirname, 'src/main/resources/META-INF/resources/dist');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const SRC = path.resolve(__dirname, 'app')
+const DEST = path.resolve(__dirname, 'src/main/resources/META-INF/resources/dist')
+const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
+  template: './app/index.html',
+  filename: 'index.html',
+  inject: 'body'
+})
 
 module.exports = {
-  entry: {
-    app: SRC + '/app.jsx'
-  },
+  entry: [
+    SRC
+  ],
   resolve: {
-    extensions: ['.js','.jsx']
+    extensions: ['.js', '.jsx']
   },
   output: {
     path: DEST,
@@ -19,6 +24,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         loaders: ['babel-loader'],
+        exclude: [/node_modules/, /public/],
         include: SRC
       },
       {test: /\.css$/, loader: 'style-loader!css-loader'},
@@ -29,10 +35,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './app/index.html',
-      filename: 'index.html',
-      inject: 'body'
-    })
+    HtmlWebpackPluginConfig
   ]
-};
+}
