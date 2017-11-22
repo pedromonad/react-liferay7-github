@@ -1,7 +1,25 @@
 {
-  "name": "react-front",
+  "name": "react-liferay7",
   "version": "1.0.0",
-  "description": "MVC Portlet with React JS and Webpack",
+  "description": "Portlet with React JS and Webpack",
+  "author": "pedrobarrostech@gmail.com",
+  "license": "MIT",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack",
+    "start": "./node_modules/.bin/webpack-dev-server --hot --inline"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:pedrobarrostech/react-liferay7.git"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "rgbcolor": "^1.0.1",
+    "webpack-dev-server": "^2.9.4",
+    "yandex-map-react": "^1.0.0"
+  },
   "devDependencies": {
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
@@ -15,23 +33,5 @@
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
     "webpack": "^3.5.0"
-  },
-  "scripts": {
-    "build": "./node_modules/.bin/webpack",
-    "start": "./node_modules/.bin/webpack-dev-server --hot --inline"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:sani-banani/react-liferay-portlet.git"
-  },
-  "author": "a.konovalov88@gmail.com",
-  "license": "MIT",
-  "dependencies": {
-    "axios": "^0.16.2",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "rgbcolor": "^1.0.1",
-    "webpack-dev-server": "^2.9.4",
-    "yandex-map-react": "^1.0.0"
   }
 }
