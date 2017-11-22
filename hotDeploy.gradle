@@ -1,0 +1,9 @@
+task hotDeploy(type: Copy){
+
+    from '/home/pedrobarros/workspace/react-liferay7/build/libs'
+    into '/home/pedrobarros/workspace/liferay-dxp-digital-enterprise-7.0-sp4/deploy'
+
+    doLast{
+        delete '/home/pedrobarros/workspace/react-liferay7/build/libs'
+    }
+}
